@@ -1,9 +1,9 @@
 'use strict';
 
-var randomItem = require('random-item');
+const randomItem = require('random-item');
 
-module.exports = function () {
-	var foods = [
+module.exports = () => {
+	const foods = [
 		'Tom yum',
 		'Somtom',
 		'Tom Kha Kai',
@@ -14,5 +14,5 @@ module.exports = function () {
 		'Pad thai'
 	];
 
-	return 'Awesome Siam food: ' + randomItem(foods);
+	return `Awesome Siam food: ${randomItem(foods)}`;
 };

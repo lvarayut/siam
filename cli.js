@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 'use strict';
-var meow = require('meow');
-var chalk = require('chalk');
-var siam = require('./');
+const meow = require('meow');
+const chalk = require('chalk');
+const siam = require('./');
 
-meow([
-	'Usage',
-	'  $ siam',
-	'',
-	'Examples',
-	'  $ siam',
-	'  Awesome Siam food: Tom yum'
-]);
+const cli = meow(`
+	Usage
+	  $ siam
 
-console.log(chalk.yellow.underline(siam()));
+	Options
+	  --color  color of the output
+
+	Examples
+	  $ siam
+	  Awesome Siam food: Tom yum
+`);
+
+console.log(chalk[cli.flags.color].underline(siam()));
